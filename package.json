@@ -1,0 +1,38 @@
+{
+  "name": "stattic-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for building modern static websites with linting, templating, optimization & more!",
+  "author": {
+    "name": "Kamil Marut",
+    "url": "https://github.com/EXLER"
+  },
+  "repository": "https://github.com/EXLER/stattic-boilerplate.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.config.js",
+    "start:dist": "cross-env NODE_ENV=production webpack-dev-server --config ./config/webpack.config.js && http-server ./dist -o",
+    "lint:js": "eslint \"src/**/*.js\"",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "build:dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint": "^7.5.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "handlebars-webpack-plugin": "^1.8.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpackbar": "^4.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
