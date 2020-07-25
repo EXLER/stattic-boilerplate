@@ -11,8 +11,7 @@ const config = {
     site_description: "Boilerplate for building modern static websites with linting, templating, optimization & more!",
     site_url: 'http://localhost',
 
-    // Source file for favicon generation
-    favicon: path.join(ROOT, 'src', 'images', 'favicon.png'),
+    favicon: path.join(ROOT, "src", "images", "favicon.png"),
 
     // Host URL for local development server
     dev_host: 'localhost',

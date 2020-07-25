@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SourceMap = config.env !== 'production';
 
 const handlebars = {
-    test: /\.(hbs)$/i,
+    test: /\.(hbs|handlebars)$/i,
     use: [
         {
             loader: 'handlebars-loader',
@@ -27,7 +27,7 @@ const js = {
     test: /\.js$/i,
     exclude: /node_modules/,
     use: [
-        'eslint-loader'
+        { loader: 'eslint-loader', options: { fix: true } }
     ]
 }
 
