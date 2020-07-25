@@ -9,11 +9,10 @@ if (!ROOT) {
 const config = {
     site_name: "stattic-boilerplate",
     site_description: "Boilerplate for building modern static websites with linting, templating, optimization & more!",
+    site_url: 'http://localhost',
 
-    viewport: 'width=device-width,initial-scale=1',
-
-    // Source file for faviocn generation
-    favicon: path.join(ROOT, '/src/images/favicon.png'),
+    // Source file for favicon generation
+    favicon: path.join(ROOT, 'src', 'images', 'favicon.png'),
 
     // Host URL for local development server
     dev_host: 'localhost',
