@@ -15,7 +15,8 @@ const handlebars = {
                 partialDirs: [
                     path.join(config.root, config.paths.src, 'views', 'partials'),
                     path.join(config.root, config.paths.src, 'views', 'layouts')
-                ]
+                ],
+                inlineRequires: '\/images\/'
             },
         },
     ],
@@ -50,7 +51,7 @@ const imageLoader = {
             optimizationLevel: 7,
         },
         pngquant: {
-            quality: '65-90',
+            quality: [0.65, 0.90],
             speed: 4,
         },
         mozjpeg: {
