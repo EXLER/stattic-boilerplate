@@ -1,14 +1,22 @@
+const path = require('path');
+
 const config = require('./site.config');
+const SourceMap = config.env !== 'production';
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const SourceMap = config.env !== 'production';
-
 const handlebars = {
-    test: /\.(hbs|handlebars)$/i,
+    test: /\.(hbs)$/i,
     use: [
         {
             loader: 'handlebars-loader',
+            query: {
+                extensions: '.hbs',
+                partialDirs: [
+                    path.join(config.root, config.paths.src, 'views', 'partials'),
+                    path.join(config.root, config.paths.src, 'views', 'layouts')
+                ]
+            },
         },
     ],
 };

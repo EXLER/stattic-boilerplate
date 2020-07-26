@@ -17,7 +17,7 @@ Run Webpack local development server with hot reload
 $ npm start
 ```
 
-Run Webpack local production server with all optimizations enabled
+Run local production server with all optimizations enabled
 ```bash
 $ npm run start:dist
 ```
