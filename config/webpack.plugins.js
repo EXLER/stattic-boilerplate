@@ -37,6 +37,7 @@ const generateHTMLPlugins = () => glob.sync(path.join(config.root, config.paths.
 
     return new HtmlPlugin({
         title: config.site_name,
+        favicon: config.favicon,
         filename: path.join(config.root, config.paths.dist, `${templateName}.html`),
         template: path.join(config.root, config.paths.src, 'views', 'pages', `${templateName}.hbs`),
         meta: {
@@ -44,7 +45,6 @@ const generateHTMLPlugins = () => glob.sync(path.join(config.root, config.paths.
         }
     });
 });
-
 
 const robots = new RobotstxtPlugin({
     sitemap: `${config.site_url}/sitemap.xml`,
