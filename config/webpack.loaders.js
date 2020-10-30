@@ -32,14 +32,6 @@ const sass = {
     ],
 }
 
-const js = {
-    test: /\.js$/i,
-    exclude: /node_modules/,
-    use: [
-        { loader: 'eslint-loader', options: { fix: true } }
-    ]
-}
-
 const imageLoader = {
     loader: 'image-webpack-loader',
     options: {
@@ -105,7 +97,6 @@ const videos = {
 
 module.exports = [
     sass,
-    js,
     images,
     fonts,
     videos,

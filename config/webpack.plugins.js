@@ -9,6 +9,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
@@ -60,6 +61,10 @@ const sitemap = new SitemapPlugin(
     }
 );
 
+const eslint = new ESLintPlugin({
+    fix: true
+});
+
 const optimizeCss = new OptimizeCssAssetsPlugin({
     assetNameRegExp: /\.css$/g,
     canPrint: true,
@@ -83,6 +88,7 @@ module.exports = [
     clean,
     stylelint,
     webpackBar,
+    eslint,
     ...generateHTMLPlugins(),
     config.env === 'production' && robots,
     config.env === 'production' && sitemap,
