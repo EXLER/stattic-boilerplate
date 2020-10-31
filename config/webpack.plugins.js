@@ -13,6 +13,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = require('./site.config');
 
@@ -83,6 +84,12 @@ const optimizeCss = new OptimizeCssAssetsPlugin({
 
 const extractCss = new MiniCssExtractPlugin();
 
+const copy = new CopyPlugin({
+    patterns: [
+        { from: path.join(config.root, config.paths.src, "static"), to: path.join(config.root, config.paths.dist, "static") }
+    ]
+})
+
 module.exports = [
     config.env === 'development' && hmr,
     clean,
@@ -93,5 +100,6 @@ module.exports = [
     config.env === 'production' && robots,
     config.env === 'production' && sitemap,
     config.env === 'production' && optimizeCss,
+    config.env === 'production' && copy,
     extractCss
 ].filter(Boolean);
